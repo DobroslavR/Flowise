@@ -9,8 +9,6 @@ services:
             - FLOWISE_PASSWORD=${FLOWISE_PASSWORD}
         image: flowiseai/flowise
         restart: always
-        ports:
-            - '${PORT}:${PORT}'
         volumes:
             - ~/.flowise:/root/.flowise
         command: /bin/sh -c "sleep 3; flowise start"
