@@ -2,12 +2,13 @@ version: '3.1'
 
 services:
     flowise:
-        image: flowiseai/flowise
-        restart: always
-        args:
+        build:
+          args:
             - PORT=${PORT}
             - FLOWISE_USERNAME=${FLOWISE_USERNAME}
             - FLOWISE_PASSWORD=${FLOWISE_PASSWORD}
+        image: flowiseai/flowise
+        restart: always
         ports:
             - '${PORT}:${PORT}'
         volumes:
